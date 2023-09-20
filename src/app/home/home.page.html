@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CEP Online
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Consulte seu CEP:</ion-card-title>
+      <ion-card-subtitle>Digite o cep que deseja consultar / ou pesquise: Estado , cidade , rua</ion-card-subtitle>
+    </ion-card-header>
+    <ion-input [(ngModel)]="CEP"></ion-input>
+
+  </ion-card>
+  <ion-button expand="full" color="dark" (click)="Consultar()">Consultar</ion-button>
+
+  <ion-card *ngIf="dadosRecebidos">
+    <ion-card-header>
+      Informações do CEP
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>CEP:</strong> {{ dadosRecebidos.cep }}</p>
+      <p><strong>Logradouro:</strong> {{ dadosRecebidos.logradouro }}</p>
+      <p><strong>Bairro:</strong> {{ dadosRecebidos.bairro }}</p>
+      <p><strong>Cidade:</strong> {{ dadosRecebidos.localidade }}</p>
+      <p><strong>Estado:</strong> {{ dadosRecebidos.uf }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
